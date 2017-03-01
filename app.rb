@@ -35,9 +35,10 @@ post '/visit' do
 	@username = params[:username]
 	@phone = params[:phone]
 	@date_and_time = params[:date_and_time]
+	@barber = params[:barber]
 
 	f2 = File.open './public/users.txt', 'a'
-	f2.write "User: #{@username}, Phone: #{@phone}, Date and time: #{@date_and_time}\n"
+	f2.write "User: #{@username}, Phone: #{@phone}, Date and time: #{@date_and_time}, Barber: #{@barber}\n"
 	f2.close
 	@visitmessage = 'Вы успешно записались на стрижку'
 end
